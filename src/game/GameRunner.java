@@ -12,22 +12,24 @@ public class GameRunner {
 
     public static void main(String[] args) {
         String heroChoice = Input.getString("Welcome! Please select a hero(Warrior/Knight): ");
-
-        Attackable hero;
+        Hero hero;
 
         if (heroChoice.equalsIgnoreCase("warrior")) {
             hero = new Warrior("Warrior");
         } else if (heroChoice.equalsIgnoreCase("knight")) {
             hero = new Knight("Knight");
-        }else {
+        } else {
             hero = new Mage(2000, 150, "zappy boi aka Samuel Moore");
         }
 
+
+//        creates enemy dragon
+        Enemy dragon = new Dragon();
+        System.out.println("dragon appears! and attacks");
+        dragon.attack();
+        hero.defend();
         hero.attack();
 
-
-        hero.defend();
-//        Defendable hero;
 
     }
 
