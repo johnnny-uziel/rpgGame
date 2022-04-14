@@ -1,6 +1,6 @@
 package characters;
 
-public abstract class Character implements Attackable {
+public abstract class Character implements Attackable, Defendable {
 
     //    PROPERTIES ALL CHARACTERS SHARE
     protected int hp;
@@ -46,12 +46,10 @@ public abstract class Character implements Attackable {
             System.out.println("Attacked for " + baseAttackDamage + " damage");
         }
     }
+
     public void defend() {
-        if (attackDamage > defense) {
-            System.out.println("Attacked for " + attackDamage + " damage");
-        } else {
-            System.out.println("Attacked for " + attackDamage + " damage");
-        }
+        System.out.println("didn't receive any damage");
+
     }
 
 }
@@ -94,7 +92,7 @@ public abstract class Character implements Attackable {
 //        this.attackFromEnemy = attackFromEnemy;
 //    }
 
-    //    BEHAVIORS THAT ALL CHARACTERS SHARE
+//    BEHAVIORS THAT ALL CHARACTERS SHARE
 //    public void defend() {
 //        if (attackFromEnemy > baseDefense) {
 //            System.out.println("Attacked for " + attackFromEnemy + " damage");

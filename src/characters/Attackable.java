@@ -2,7 +2,7 @@
 
 package characters;
 
-public interface Attackable  {
+public interface Attackable extends Action {
 
     int baseAttackDamage = 10;
 
