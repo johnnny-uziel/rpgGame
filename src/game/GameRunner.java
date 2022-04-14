@@ -22,10 +22,14 @@ public class GameRunner {
             hero = new Mage(2000, 150, "zappy boi aka Samuel Moore");
         }
 
+
+//        creates enemy dragon
+        Enemy dragon = new Dragon();
+        System.out.println("dragon appears! and attacks");
+        dragon.attack();
+        hero.defend();
         hero.attack();
 
-
-        hero.defend();
 
     }
 
