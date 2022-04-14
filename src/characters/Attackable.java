@@ -2,7 +2,7 @@
 
 package characters;
 
-public interface Attackable {
+public interface Attackable  {
 
     int baseAttackDamage = 10;
 

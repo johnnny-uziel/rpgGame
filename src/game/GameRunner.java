@@ -25,6 +25,10 @@ public class GameRunner {
 
         hero.attack();
 
+
+        hero.defend();
+//        Defendable hero;
+
     }
 
 //    public static void main(String[] args) {

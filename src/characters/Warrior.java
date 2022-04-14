@@ -14,4 +14,8 @@ public class Warrior extends Hero {
     }
 
 
+    public void defend(){System.out.println("defend");
+    }
+
+
 }

@@ -1,6 +1,6 @@
 package characters;
 
-public class Hero extends Character {
+public abstract class Hero extends Character {
 
     private String name;
 
