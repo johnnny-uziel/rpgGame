@@ -6,8 +6,8 @@ public class Zombie extends Enemy {
 
     private boolean isRotting;
 
-    public Zombie() {
-        super(100, 15);
+    public Zombie(String name) {
+        super(100, 15, name);
         this.isRotting = true;
     }
 

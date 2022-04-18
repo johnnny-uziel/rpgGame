@@ -2,8 +2,8 @@ package characters;
 
 public class Dragon extends Enemy{
 
-    public Dragon() {
-        super(200, 100);
+    public Dragon(String name) {
+        super(200, 100, name);
     }
 
     public void fly() {
