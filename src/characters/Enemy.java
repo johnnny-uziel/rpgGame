@@ -4,7 +4,7 @@ package characters;
 
 public class Enemy extends Character {
 
-    public Enemy(int hp, int attackDamage) {
+    public Enemy(int hp, int attackDamage, String name) {
         super(hp, attackDamage);
     }
 

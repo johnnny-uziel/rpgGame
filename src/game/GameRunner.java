@@ -22,15 +22,72 @@ public class GameRunner {
             hero = new Mage(2000, 150, "zappy boi aka Samuel Moore");
         }
 
+        String enemyChoice =  Input.getString("Select an enemy(Zombie/Dragon)");
+
+        Enemy enemy;
+
+        if (enemyChoice.equalsIgnoreCase("Zombie")){
+            enemy = new Zombie("Zombie");
+        }else {
+            enemy = new Dragon("Dragon");
+        }
+
+
+
 
 //        creates enemy dragon
-        Enemy dragon = new Dragon();
-        System.out.println("dragon appears! and attacks");
-        dragon.attack();
-        hero.defend();
-        hero.attack();
+//        Enemy dragon = new Dragon();
+//        System.out.println("dragon appears! and attacks");
+//        dragon.attack();
+//        hero.defend();
+//        hero.attack();
+
+
+
+//        ---------IF STATEMENT FOR character1 rolls attack, character2 rolls for defend---------
+
+            int heroRoll = hero.roll();
+            int enemyRoll = enemy.roll();
+            int attackResult = 0;
+            int defendResult = 0;
+        System.out.println("hero roll " + heroRoll);
+        System.out.println("enem roll " + enemyRoll);
+
+
+        if (heroRoll >= enemyRoll){
+            attackResult = hero.getAttackDamage() - enemy.defend();
+            System.out.println("attack res " + attackResult);
+        }else if (heroRoll < enemyRoll) {
+            System.out.println("Your attack failed...");
+        }
+
+//            if (heroRoll == 1) {
+//                hero.attack();
+//            } else {
+//                hero.defend();
+//            }
+//
+//            if (enemyRoll == 1) {
+//                enemy.attack();
+//            }else {
+//                enemy.defend();
+//            }
+
+        System.out.println("old Hp " + hero.getHp());
+
+            if (hero.compare(hero.getAttackDamage(), 160)){
+                int remaining = hero.getHp() - hero.getAttackDamage();
+                hero.setHp(remaining);
+                System.out.println("after Hp " + hero.getHp());
+            }else {
+                System.out.println("Your attack failed...");
+            }
+
+
 
     }
+
+
 
 //    public static void main(String[] args) {
 //

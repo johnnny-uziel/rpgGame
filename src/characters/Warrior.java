@@ -14,7 +14,8 @@ public class Warrior extends Hero {
     }
 
 
-    public void defend(){System.out.println("warrior defends");
+    public int defend() {
+        return 120;
     }
 
 

@@ -47,10 +47,30 @@ public abstract class Character implements Attackable, Defendable {
         }
     }
 
-    public void defend() {
-        System.out.println("didn't receive any damage");
-
+    public int defend() {
+        return 120;
     }
+
+    public int roll(){
+        int random_int = (int) Math.floor(Math.random() * (2 - 1 + 1) + 1);
+        return random_int;
+    }
+
+
+//    ------------if attacker’s roll is higher than defender’s roll then attack happens minus the defense value
+//if attacker’s roll is lower than defender’s roll then the attack is unsuccessful and no damage is taken----------
+
+    public boolean compare(int attackDamage, int defense){
+        if (attackDamage > defense){
+//            attack();
+            return true;
+        }else {
+            return false;
+
+        }
+    }
+
+
 
 }
 

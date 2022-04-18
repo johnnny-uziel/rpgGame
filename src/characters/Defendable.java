@@ -4,8 +4,8 @@ public interface Defendable extends Action {
     int baseDefense = 5;
 
 
-    default void defense() {
-
+    default int defend() {
+        return 120;
     }
 //
 //    void spDefense() {
