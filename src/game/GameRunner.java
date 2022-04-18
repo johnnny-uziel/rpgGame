@@ -22,17 +22,15 @@ public class GameRunner {
             hero = new Mage(2000, 150, "zappy boi aka Samuel Moore");
         }
 
-        String enemyChoice =  Input.getString("Select an enemy(Zombie/Dragon)");
+        String enemyChoice = Input.getString("Select an enemy(Zombie/Dragon)");
 
         Enemy enemy;
 
-        if (enemyChoice.equalsIgnoreCase("Zombie")){
+        if (enemyChoice.equalsIgnoreCase("Zombie")) {
             enemy = new Zombie("Zombie");
-        }else {
+        } else {
             enemy = new Dragon("Dragon");
         }
-
-
 
 
 //        creates enemy dragon
@@ -43,24 +41,42 @@ public class GameRunner {
 //        hero.attack();
 
 
-
 //        ---------IF STATEMENT FOR character1 rolls attack, character2 rolls for defend---------
+
+
+        do {
+
 
             int heroRoll = hero.roll();
             int enemyRoll = enemy.roll();
             int attackResult = 0;
             int defendResult = 0;
-        System.out.println("hero roll " + heroRoll);
-        System.out.println("enem roll " + enemyRoll);
+            System.out.println("hero roll " + heroRoll);
+            System.out.println("enem roll " + enemyRoll);
 
+            if (heroRoll > enemyRoll) {
+                System.out.println("------------------");
+                System.out.println("hero hp before attack " + hero.getHp());
+                System.out.println("hero attacks");
+                attackResult = hero.getAttackDamage() - enemy.defend();
+                System.out.println("attack res " + attackResult);
+//            hero.compare(attackResult, hero.getDefense());
+                hero.setHp(hero.getHp() - attackResult);
+                System.out.println("hero's hp  " + hero.getHp());
 
-        if (heroRoll >= enemyRoll){
-            attackResult = hero.getAttackDamage() - enemy.defend();
-            System.out.println("attack res " + attackResult);
-        }else if (heroRoll < enemyRoll) {
-            System.out.println("Your attack failed...");
-        }
-
+            } else if (heroRoll == enemyRoll) {
+                System.out.println("it's a tie");
+            } else {
+                System.out.println("------------------");
+                System.out.println("before " + enemy.getHp());
+                System.out.println("enemy attacks");
+                attackResult = enemy.getAttackDamage() - hero.defend();
+                System.out.println("attack res " + attackResult);
+//            enemy.compare(attackResult, enemy.getDefense());
+                enemy.setHp(enemy.getHp() - attackResult);
+                System.out.println("after " + enemy.getHp());
+            }
+        } while (hero.getHp() > 0 && enemy.getHp() > 0);
 //            if (heroRoll == 1) {
 //                hero.attack();
 //            } else {
@@ -72,21 +88,19 @@ public class GameRunner {
 //            }else {
 //                enemy.defend();
 //            }
-
-        System.out.println("old Hp " + hero.getHp());
-
-            if (hero.compare(hero.getAttackDamage(), 160)){
-                int remaining = hero.getHp() - hero.getAttackDamage();
-                hero.setHp(remaining);
-                System.out.println("after Hp " + hero.getHp());
-            }else {
-                System.out.println("Your attack failed...");
-            }
-
+//
+//        System.out.println("old Hp " + hero.getHp());
+//
+//        if (hero.compare(hero.getAttackDamage(), 160)) {
+//            int remaining = hero.getHp() - hero.getAttackDamage();
+//            hero.setHp(remaining);
+//            System.out.println("after Hp " + hero.getHp());
+//        } else {
+//            System.out.println("Your attack failed...");
+//        }
 
 
     }
-
 
 
 //    public static void main(String[] args) {
